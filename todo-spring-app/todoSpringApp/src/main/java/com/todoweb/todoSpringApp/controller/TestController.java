@@ -2,8 +2,6 @@ package com.todoweb.todoSpringApp.controller;
 
 import com.todoweb.todoSpringApp.dto.ResponseDTO;
 import com.todoweb.todoSpringApp.dto.TestRequestBodyDTO;
-import com.todoweb.todoSpringApp.dto.TodoDTO;
-import com.todoweb.todoSpringApp.model.TodoEntity;
 import com.todoweb.todoSpringApp.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

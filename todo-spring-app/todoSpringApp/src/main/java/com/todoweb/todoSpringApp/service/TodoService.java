@@ -1,6 +1,5 @@
 package com.todoweb.todoSpringApp.service;
 
-import com.todoweb.todoSpringApp.dto.TodoDTO;
 import com.todoweb.todoSpringApp.model.TodoEntity;
 import com.todoweb.todoSpringApp.persistence.TodoRepository;
 import lombok.extern.slf4j.Slf4j;
