@@ -32,7 +32,7 @@ public class TodoController {
             List<TodoEntity> entities = service.create(entity);
             List<TodoDTO> dtos = entities.stream().map(TodoDTO::new).collect(Collectors.toList());
             ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             String error = e.getMessage();
             ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().error(error).build();
@@ -40,7 +40,7 @@ public class TodoController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/findAll")
     public ResponseEntity<?> findAll() {
         try{
             List<TodoEntity> entities = service.findAll();
@@ -54,11 +54,14 @@ public class TodoController {
         }
     }
 
-    @GetMapping("/findById")
+    @GetMapping
     public ResponseEntity<?> findById(@AuthenticationPrincipal String userId) {
+        System.out.println("UserID : " + userId);
 
         List<TodoEntity> entities = service.findByUserId(userId);
+
         List<TodoDTO> dtos = entities.stream().map(TodoDTO::new).collect(Collectors.toList());
+
         ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
 
         return ResponseEntity.ok(response);
@@ -73,7 +76,7 @@ public class TodoController {
         List<TodoDTO> dtos = entities.stream().map(TodoDTO::new).collect(Collectors.toList());
         ResponseDTO<TodoDTO> response = ResponseDTO.<TodoDTO>builder().data(dtos).build();
 
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok().body(response);
     }
 
     @DeleteMapping
