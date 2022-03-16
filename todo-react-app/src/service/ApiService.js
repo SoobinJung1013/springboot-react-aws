@@ -19,6 +19,7 @@ export function call(api, method, request) {
     // GET method
     options.body = JSON.stringify(request);
   }
+
   return fetch(options.url, options)
     .then((response) =>
       response.json().then((json) => {
@@ -31,9 +32,10 @@ export function call(api, method, request) {
     )
     .catch((error) => {
       console.log(error.status);
-      if (error.status === 403) {
-        window.location.href = "/login"; // redirect
-      }
+      // if (error.status === 403) {
+      //   window.location.href = "/login";
+      // }
+      window.location.href = "/login";
       return Promise.reject(error);
     });
 }

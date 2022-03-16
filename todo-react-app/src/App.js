@@ -14,6 +14,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { call, signout } from "./service/ApiService.js";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
