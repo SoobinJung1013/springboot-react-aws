@@ -3,9 +3,9 @@ let backendHost;
 const hostname = window && window.location && window.location.hostname;
 
 if (hostname === "localhost") {
-  backendHost = "http://localhost:8080";
+  backendHost = "";
 } else {
-  backendHost = "http://todoweb-springboot.ap-northeast-2.elasticbeanstalk.com";
+  backendHost = "";
 }
 
 export const API_BASE_URL = `${backendHost}`;
